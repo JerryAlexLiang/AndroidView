@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_select_style"
+        android:text="实现View滑动的方法一"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/button_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_select_style"
+        android:text="实现View滑动的方法二"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/button_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_select_style"
+        android:text="实现View滑动的方法三"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/button_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_select_style"
+        android:text="实现View滑动的方法四"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/button_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_select_style"
+        android:text="实现View滑动的方法五"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/button_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_select_style"
+        android:text="实现View滑动的方法六"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+
+</LinearLayout>  
