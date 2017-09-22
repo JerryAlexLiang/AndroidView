@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomView</string>
+    <string name="title_bar_content">自定义组合控件</string>
+</resources>

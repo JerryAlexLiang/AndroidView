@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="data">
+        <item>继承系统控件的自定义View（☆）</item>
+        <item>继承View的自定义View（☆☆）</item>
+        <item>自定义组合控件-自定义标题栏（☆☆☆)</item>
+    </string-array>
+</resources>
+
