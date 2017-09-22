@@ -27,8 +27,7 @@ import static com.example.customview.R.drawable.title_right;
  * 6、为了引入自定义属性，需要在TitleBar的构造函数中解析自定义属性的值
  * 7、xml中引用组合控件
  * 8、在主界面调用组合控件
- * 注意：因为我们的组合控件整体布局是RelativeLayout，所以我们的组合控件要继承RelativeLayout：
- * <p>
+ * 注意：因为我们的组合控件整体布局是RelativeLayout，所以我们的组合控件要继承RelativeLayout：<p>
  * 作者:yangliang
  */
 public class CustomGroupWidgetTitleBar extends RelativeLayout {
