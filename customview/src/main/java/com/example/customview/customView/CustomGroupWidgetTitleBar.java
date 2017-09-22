@@ -99,12 +99,12 @@ public class CustomGroupWidgetTitleBar extends RelativeLayout {
         tv_title_bar_title = (TextView) findViewById(R.id.tv_title_bar_title);
         rl_title_bar_root_layout = (RelativeLayout) findViewById(R.id.title_bar_root_layout);
 
-        //设置左边button控件的背景
+        //设置左边button控件的背景,设置button不显示，第一个参数设置为0，第二个参数设置为false
 //        iv_title_bar_left.setImageResource(ico_return);
-        setLeftImageBackground(ico_return);
-        //设置右边button控件的背景
+        setLeftImageBackground(ico_return, true);
+        //设置右边button控件的背景,设置button不显示，第一个参数设置为0，第二个参数设置为false
 //        iv_title_bar_right.setImageResource(title_right);
-        setRightImageBackground(title_right);
+        setRightImageBackground(title_right, true);
         //设置背景颜色
 //        rl_title_bar_root_layout.setBackgroundColor(mColor);
         setBarBackground(mColor);
@@ -120,8 +120,14 @@ public class CustomGroupWidgetTitleBar extends RelativeLayout {
      *
      * @param title_right
      */
-    public void setRightImageBackground(int title_right) {
-        iv_title_bar_right.setImageResource(title_right);
+    public void setRightImageBackground(int title_right, boolean rightButtonVisible) {
+        if (rightButtonVisible) {
+            iv_title_bar_right.setVisibility(VISIBLE);
+            iv_title_bar_right.setImageResource(title_right);
+        } else {
+            iv_title_bar_right.setVisibility(GONE);
+        }
+
     }
 
     /**
@@ -129,8 +135,13 @@ public class CustomGroupWidgetTitleBar extends RelativeLayout {
      *
      * @param ico_return
      */
-    public void setLeftImageBackground(int ico_return) {
-        iv_title_bar_left.setImageResource(ico_return);
+    public void setLeftImageBackground(int ico_return, boolean rightButtonVisible) {
+        if (rightButtonVisible) {
+            iv_title_bar_left.setVisibility(VISIBLE);
+            iv_title_bar_left.setImageResource(ico_return);
+        } else {
+            iv_title_bar_left.setVisibility(GONE);
+        }
     }
 
 

@@ -31,16 +31,23 @@ public class ExtendsGroupWidgetActivity extends AppCompatActivity {
         layoutContainer = (LinearLayout) findViewById(R.id.main_container);
         //初始化自定义标题栏控件
         customGroupWidgetTitleBar = (CustomGroupWidgetTitleBar) findViewById(R.id.title_bar);
+
         //自定义设置TitleBar的背景颜色，不设置默认为蓝色
         customGroupWidgetTitleBar.setBarBackground(Color.RED);
+
         //自定义设置TitleBar的标题的颜色，不设置默认为白色
         customGroupWidgetTitleBar.setBarTitleColor(Color.YELLOW);
+
         //自定义设置TitleBar的标题文字内容，不设置默认为"自定义组合控件"
         customGroupWidgetTitleBar.setBarTitle("自定义组合控件-TitleBar");
-        //自定义设置TitleBar的左边按钮的背景，不设置则显示默认图标
+
+        //自定义设置TitleBar的左边按钮的背景，不设置则显示默认图标,设置button不显示，第一个参数设置为0，第二个参数设置为false
 //        customGroupWidgetTitleBar.setLeftImageBackground(R.mipmap.ic_launcher);
-        //自定义设置TitleBar的右边按钮的背景，不设置则显示默认图标
-//        customGroupWidgetTitleBar.setRightImageBackground(R.mipmap.ic_launcher_round);
+
+        //自定义设置TitleBar的右边按钮的背景，不设置则显示默认图标,设置button不显示，第一个参数设置为0，第二个参数设置为false
+//        customGroupWidgetTitleBar.setRightImageBackground(R.mipmap.ic_launcher_round, true);
+//        customGroupWidgetTitleBar.setRightImageBackground(0, false);
+
         //自定义设置TitleBar的左边按钮的点击监听响应事件
         customGroupWidgetTitleBar.setLeftListener(new View.OnClickListener() {
             @Override
@@ -57,13 +64,15 @@ public class ExtendsGroupWidgetActivity extends AppCompatActivity {
                 if (!isClicked) {
                     layoutContainer.setBackgroundColor(Color.GRAY);
                     //自定义设置TitleBar的左边按钮的背景
-                    customGroupWidgetTitleBar.setRightImageBackground(R.drawable.ico_return);
+                    customGroupWidgetTitleBar.setRightImageBackground(R.drawable.ico_return, true);
+//                    //设置button不显示，第一个参数设置为0，第二个参数设置为false
+//                    customGroupWidgetTitleBar.setRightImageBackground(0, false);
                     System.out.println("===> " + isClicked);
                     isClicked = true;
                 } else if (isClicked) {
                     layoutContainer.setBackgroundColor(Color.WHITE);
                     //自定义设置TitleBar的右边按钮的背景
-                    customGroupWidgetTitleBar.setRightImageBackground(R.drawable.title_right);
+                    customGroupWidgetTitleBar.setRightImageBackground(R.drawable.title_right, true);
                     System.out.println("===> " + isClicked);
                     isClicked = false;
                 }
