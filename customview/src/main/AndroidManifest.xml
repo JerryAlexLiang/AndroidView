@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".activity.ExtendsWidgetActivity" />
         <activity android:name=".activity.ExtendsViewActivity" />
-        <activity android:name=".activity.ExtendsGroupWidgetActivity"></activity>
+        <activity android:name=".activity.ExtendsGroupWidgetActivity" />
+        <activity android:name=".activity.ExtendsViewGroupActivity"></activity>
     </application>
 
 </manifest>
