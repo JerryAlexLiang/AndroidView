@@ -1,1 +1,1 @@
-include ':app', ':ccscrollview', ':customview'
+include ':app', ':ccscrollview', ':customview', ':mydrawingboard'
