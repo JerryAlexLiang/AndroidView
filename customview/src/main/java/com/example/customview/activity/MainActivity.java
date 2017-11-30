@@ -26,18 +26,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent();
         switch (position) {
             case 0:
-                intent.setClass(MainActivity.this, ExtendsWidgetActivity.class);
+                intent.setClass(MainActivity.this, MyPopupWindow.class);
                 break;
 
             case 1:
-                intent.setClass(MainActivity.this, ExtendsViewActivity.class);
+                intent.setClass(MainActivity.this, ExtendsWidgetActivity.class);
                 break;
 
             case 2:
-                intent.setClass(MainActivity.this, ExtendsGroupWidgetActivity.class);
+                intent.setClass(MainActivity.this, ExtendsViewActivity.class);
                 break;
 
             case 3:
+                intent.setClass(MainActivity.this, ExtendsGroupWidgetActivity.class);
+                break;
+
+            case 4:
                 intent.setClass(MainActivity.this, ExtendsViewGroupActivity.class);
                 break;
 
