@@ -20,7 +20,8 @@
         <activity android:name=".activity.ExtendsViewActivity" />
         <activity android:name=".activity.ExtendsGroupWidgetActivity" />
         <activity android:name=".activity.ExtendsViewGroupActivity" />
-        <activity android:name=".activity.MyPopupWindow"></activity>
+        <activity android:name=".activity.MyPopupWindow" />
+        <activity android:name=".activity.MyProgressActivity"></activity>
     </application>
 
 </manifest>

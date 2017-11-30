@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 intent.setClass(MainActivity.this, ExtendsViewGroupActivity.class);
                 break;
 
+            case 5:
+                intent.setClass(MainActivity.this, MyProgressActivity.class);
+                break;
+
             default:
                 break;
 
