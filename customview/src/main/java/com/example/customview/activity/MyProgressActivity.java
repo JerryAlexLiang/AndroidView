@@ -4,6 +4,9 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -137,6 +140,30 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
             progressValue.setVisibility(View.VISIBLE);
             isChangeStyle = true;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.java_set:
+                Toast.makeText(this, "hhh", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.xml_set:
+                Toast.makeText(this, "hhh", Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

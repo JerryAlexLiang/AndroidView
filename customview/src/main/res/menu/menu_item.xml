@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/java_set"
+        android:title="Java代码控制属性"
+        android:icon="@drawable/hospital_ed"/>
+    <item
+        android:id="@+id/xml_set"
+        android:title="XML布局设置属性"
+        android:icon="@drawable/icon_association_activity"/>
+</menu>
