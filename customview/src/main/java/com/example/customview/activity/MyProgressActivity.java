@@ -50,12 +50,12 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
     private void initView() {
         myCustomProgress = (MyCustomProgress) findViewById(R.id.my_progress);
 
-        //Java代码方式设置自定义progress的样式属性
-        myCustomProgress.setRoundWidth(10);
-        myCustomProgress.setRoundColor(Color.GREEN);
-        myCustomProgress.setProgressColor(Color.BLUE);
-        myCustomProgress.setTextColor(Color.RED);
-        myCustomProgress.setTextSize(70);
+//        //Java代码方式设置自定义progress的样式属性
+//        myCustomProgress.setRoundWidth(10);
+//        myCustomProgress.setRoundColor(Color.GREEN);
+//        myCustomProgress.setProgressColor(Color.BLUE);
+//        myCustomProgress.setTextColor(Color.RED);
+//        myCustomProgress.setTextSize(70);
 
         progressValue = (TextView) findViewById(R.id.get_progress_value);
 
@@ -108,20 +108,22 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.btn_set_value:
                 String setValue = etSetValue.getText().toString().trim();
-                int customValueInteger = Integer.parseInt(setValue);
                 if (setValue.equals("")) {
                     Toast.makeText(this, "输入不能为空，请重新输入！", Toast.LENGTH_SHORT).show();
-                }
-
-                setStyle();
-
-                if (customValueInteger >= 0 && customValueInteger <= 100) {
-                    myCustomProgress.setProgress(customValueInteger);
-                    progressValue.postInvalidate();
-                    progressValue.setText(customValueInteger + "%");
                 } else {
-                    Toast.makeText(this, "请输入0-100之间的数字！", Toast.LENGTH_SHORT).show();
+                    int customValueInteger = Integer.parseInt(setValue);
+
+                    setStyle();
+
+                    if (customValueInteger >= 0 && customValueInteger <= 100) {
+                        myCustomProgress.setProgress(customValueInteger);
+                        progressValue.postInvalidate();
+                        progressValue.setText(customValueInteger + "%");
+                    } else {
+                        Toast.makeText(this, "请输入0-100之间的数字！", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
                 break;
 
             default:
@@ -151,9 +153,14 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.java_set:
-                Toast.makeText(this, "hhh", Toast.LENGTH_SHORT).show();
+                //Java代码方式设置自定义progress的样式属性
+                myCustomProgress.setRoundWidth(10);
+                myCustomProgress.setRoundColor(Color.GREEN);
+                myCustomProgress.setProgressColor(Color.BLUE);
+                myCustomProgress.setTextColor(Color.RED);
+                myCustomProgress.setTextSize(70);
                 break;
 
             case R.id.xml_set:

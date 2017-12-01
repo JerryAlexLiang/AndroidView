@@ -94,11 +94,14 @@ public class MyCustomProgress extends View {
         // 中间的进度百分比，先转换成float在进行除法运算，不然都为0
         int percent = (int) (((float) progress / (float) maxProgress) * 100);
         float textWidth = paint.measureText(percent + "%");// 通过画笔测量文字的宽度(重点)
+        float paintOffset = paint.descent() + paint.ascent();//画笔偏移量
         if (isTextDisplay && percent != 0 && isStroke) {
-            canvas.drawText(percent + "%", getWidth() / 2 - textWidth / 2, getWidth() / 2, paint);
+//            canvas.drawText(percent + "%", getWidth() / 2 - textWidth / 2, getHeight() / 2 + textWidth / 3, paint);
+            //bug修改，使进度文字居中
+            canvas.drawText(percent + "%", (getWidth() - textWidth) / 2, (getWidth() - paintOffset) / 2, paint);
         }
         if (isTextDisplay && percent == 100) {
-            canvas.drawText("完成", getWidth() / 2 - textWidth / 2, (getHeight() / 3) * 2, paint);
+            canvas.drawText("完成", getWidth() / 2 - textWidth / 2, (getHeight() / 4) * 3, paint);
         }
 
     }
