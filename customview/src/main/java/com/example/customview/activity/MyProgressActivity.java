@@ -3,9 +3,12 @@ package com.example.customview.activity;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.customview.R;
 import com.example.customview.customView.MyCustomProgress;
@@ -22,11 +25,26 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
     private TextView progressValue;
     private int currenProgress;
     private Button buttonDownload;
+    private Button buttonSetStyle;
+    private EditText etSetValue;
+    private Button btnSetValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_progress);
+        //初始化控件
+        initView();
+
+        //设置点击监听事件
+        buttonSetStyle.setOnClickListener(this);
+        buttonDownload.setOnClickListener(this);
+        btnSetValue.setOnClickListener(this);
+
+
+    }
+
+    private void initView() {
         myCustomProgress = (MyCustomProgress) findViewById(R.id.my_progress);
 
         //Java代码方式设置自定义progress的样式属性
@@ -38,13 +56,11 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
 
         progressValue = (TextView) findViewById(R.id.get_progress_value);
 
-        Button buttonSetStyle = (Button) findViewById(R.id.progress_style);
+        etSetValue = (EditText) findViewById(R.id.et_set_value);
+        btnSetValue = (Button) findViewById(R.id.btn_set_value);
+
+        buttonSetStyle = (Button) findViewById(R.id.progress_style);
         buttonDownload = (Button) findViewById(R.id.start_download);
-
-        buttonSetStyle.setOnClickListener(this);
-        buttonDownload.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -65,7 +81,7 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
                                 @Override
                                 public void run() {
                                     progressValue.setText(currenProgress + "%");
-                                    if (currenProgress == 100){
+                                    if (currenProgress == 100) {
                                         buttonDownload.setEnabled(true);
                                         buttonDownload.setText("开始下载");
                                     }
@@ -84,20 +100,42 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.progress_style:
-                if (isChangeStyle) {
-                    myCustomProgress.setStroke(true);
-                    progressValue.setVisibility(View.GONE);
-                    isChangeStyle = false;
+                setStyle();
+                break;
+
+            case R.id.btn_set_value:
+                String setValue = etSetValue.getText().toString().trim();
+                int customValueInteger = Integer.parseInt(setValue);
+                if (setValue.equals("")) {
+                    Toast.makeText(this, "输入不能为空，请重新输入！", Toast.LENGTH_SHORT).show();
+                }
+
+                setStyle();
+
+                if (customValueInteger >= 0 && customValueInteger <= 100) {
+                    myCustomProgress.setProgress(customValueInteger);
+                    progressValue.postInvalidate();
+                    progressValue.setText(customValueInteger + "%");
                 } else {
-                    myCustomProgress.setStroke(false);
-                    //设置在填充模式进度条下面显示进度
-                    progressValue.setVisibility(View.VISIBLE);
-                    isChangeStyle = true;
+                    Toast.makeText(this, "请输入0-100之间的数字！", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
             default:
                 break;
+        }
+    }
+
+    private void setStyle() {
+        if (isChangeStyle) {
+            myCustomProgress.setStroke(true);
+            progressValue.setVisibility(View.GONE);
+            isChangeStyle = false;
+        } else {
+            myCustomProgress.setStroke(false);
+            //设置在填充模式进度条下面显示进度
+            progressValue.setVisibility(View.VISIBLE);
+            isChangeStyle = true;
         }
     }
 }
