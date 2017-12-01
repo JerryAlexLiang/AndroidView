@@ -1,6 +1,7 @@
 package com.example.customview.customView;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,8 @@ import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.example.customview.R;
 
 import static android.graphics.Paint.Style.STROKE;
 
@@ -49,6 +52,22 @@ public class MyCustomProgress extends View {
 
     public MyCustomProgress(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        //解析attrs自定义的progress的属性
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MyCustomProgress);
+        //获取自定义属性和默认值
+        roundColor = typedArray.getColor(R.styleable.MyCustomProgress_roundColor, Color.BLUE);
+        progressColor = typedArray.getColor(R.styleable.MyCustomProgress_progressColor, Color.RED);
+        roundWidth = typedArray.getInteger(R.styleable.MyCustomProgress_roundWidth, 20);
+        progress = typedArray.getInteger(R.styleable.MyCustomProgress_progress, 0);
+        maxProgress = typedArray.getInteger(R.styleable.MyCustomProgress_maxProgress, 100);
+        isStroke = typedArray.getBoolean(R.styleable.MyCustomProgress_isStroke, true);
+        isTextDisplay = typedArray.getBoolean(R.styleable.MyCustomProgress_isTextDisplay, true);
+        textColor = typedArray.getColor(R.styleable.MyCustomProgress_textColor, Color.BLUE);
+        textSize = typedArray.getInteger(R.styleable.MyCustomProgress_textSize, 75);
+
+        typedArray.recycle();
+
+        //初始化画笔
         initPaint();
     }
 

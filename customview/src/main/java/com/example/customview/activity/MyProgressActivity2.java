@@ -1,12 +1,7 @@
 package com.example.customview.activity;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,11 +12,11 @@ import com.example.customview.R;
 import com.example.customview.customView.MyCustomProgress;
 
 /**
- * 创建日期：2017/11/30 on 下午8:14
- * 描述: 使用自定义View实现自定义圆形进度条的功能
+ * 创建日期：2017/12/2 on 上午12:02
+ * 描述: 使用自定义View实现自定义圆形进度条的功能-xml控制属性
  * 作者: liangyang
  */
-public class MyProgressActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyProgressActivity2 extends AppCompatActivity implements View.OnClickListener {
 
     private MyCustomProgress myCustomProgress;
     private boolean isChangeStyle = false;
@@ -35,7 +30,7 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_progress);
+        setContentView(R.layout.activity_my_progress2);
         //初始化控件
         initView();
 
@@ -43,33 +38,24 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
         buttonSetStyle.setOnClickListener(this);
         buttonDownload.setOnClickListener(this);
         btnSetValue.setOnClickListener(this);
-
-
     }
 
     private void initView() {
-        myCustomProgress = (MyCustomProgress) findViewById(R.id.my_progress);
+        myCustomProgress = (MyCustomProgress) findViewById(R.id.my_progress_xml);
 
-//        //Java代码方式设置自定义progress的样式属性
-//        myCustomProgress.setRoundWidth(10);
-//        myCustomProgress.setRoundColor(Color.GREEN);
-//        myCustomProgress.setProgressColor(Color.BLUE);
-//        myCustomProgress.setTextColor(Color.RED);
-//        myCustomProgress.setTextSize(70);
+        progressValue = (TextView) findViewById(R.id.get_progress_value_xml);
 
-        progressValue = (TextView) findViewById(R.id.get_progress_value);
+        etSetValue = (EditText) findViewById(R.id.et_set_value_xml);
+        btnSetValue = (Button) findViewById(R.id.btn_set_value_xml);
 
-        etSetValue = (EditText) findViewById(R.id.et_set_value);
-        btnSetValue = (Button) findViewById(R.id.btn_set_value);
-
-        buttonSetStyle = (Button) findViewById(R.id.progress_style);
-        buttonDownload = (Button) findViewById(R.id.start_download);
+        buttonSetStyle = (Button) findViewById(R.id.progress_style_xml);
+        buttonDownload = (Button) findViewById(R.id.start_download_xml);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.start_download:
+            case R.id.start_download_xml:
                 buttonDownload.setEnabled(false);
                 buttonDownload.setText("正在下载中...");
                 //模拟下载进度
@@ -102,11 +88,11 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
                 }).start();
                 break;
 
-            case R.id.progress_style:
+            case R.id.progress_style_xml:
                 setStyle();
                 break;
 
-            case R.id.btn_set_value:
+            case R.id.btn_set_value_xml:
                 String setValue = etSetValue.getText().toString().trim();
                 if (setValue.equals("")) {
                     Toast.makeText(this, "输入不能为空，请重新输入！", Toast.LENGTH_SHORT).show();
@@ -144,35 +130,5 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_item, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.java_set:
-                //Java代码方式设置自定义progress的样式属性
-                myCustomProgress.setRoundWidth(10);
-                myCustomProgress.setRoundColor(Color.GREEN);
-                myCustomProgress.setProgressColor(Color.BLUE);
-                myCustomProgress.setTextColor(Color.RED);
-                myCustomProgress.setTextSize(70);
-                break;
-
-            case R.id.xml_set:
-                Intent intent = new Intent(MyProgressActivity.this, MyProgressActivity2.class);
-                startActivity(intent);
-                break;
-
-            default:
-                break;
-        }
-        
-        return super.onOptionsItemSelected(item);
-    }
 }
-
