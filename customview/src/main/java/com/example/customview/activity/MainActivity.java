@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 intent.setClass(MainActivity.this, MyProgressActivity.class);
                 break;
 
+            case 6:
+                intent.setClass(MainActivity.this, WaterRingWaveActivity.class);
+                break;
+
+
             default:
                 break;
 

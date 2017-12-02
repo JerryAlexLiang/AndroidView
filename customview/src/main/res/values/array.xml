@@ -5,8 +5,9 @@
         <item>继承系统控件的自定义View（☆）</item>
         <item>继承View的自定义View（☆☆）</item>
         <item>自定义组合控件-自定义标题栏（☆☆☆)</item>
-        <item>自定义ViewGroup-自定义水平滑动效果CustomHorizontalView（☆☆☆☆☆)</item>
+        <item>自定义ViewGroup-自定义水平滑动效果CustomHorizontalView（☆☆☆☆)</item>
         <item>自定义圆形进度条MyProgress（☆☆☆☆☆)</item>
+        <item>自定义View-水波纹效果（☆☆☆☆☆)</item>
     </string-array>
 </resources>
 
