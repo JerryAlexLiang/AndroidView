@@ -25,7 +25,8 @@
         <activity android:name=".activity.MyProgressActivity2" />
         <activity android:name=".activity.WaterRingWaveActivity" />
         <activity android:name=".activity.MyClockOneActivity" />
-        <activity android:name=".activity.MyPlaneActivity"></activity>
+        <activity android:name=".activity.MyPlaneActivity" />
+        <activity android:name=".activity.BarrageActivity"></activity>
     </application>
 
 </manifest>

@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 intent.setClass(MainActivity.this, MyPlaneActivity.class);
                 break;
 
+            case 9:
+                intent.setClass(MainActivity.this, BarrageActivity.class);
+                break;
+
 
             default:
                 break;
