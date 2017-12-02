@@ -36,6 +36,9 @@ public class MyProgressActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_progress);
+
+        setTitle("自定义圆形进度条");
+
         //初始化控件
         initView();
 

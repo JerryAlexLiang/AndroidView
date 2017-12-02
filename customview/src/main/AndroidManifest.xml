@@ -23,7 +23,8 @@
         <activity android:name=".activity.MyPopupWindow" />
         <activity android:name=".activity.MyProgressActivity" />
         <activity android:name=".activity.MyProgressActivity2" />
-        <activity android:name=".activity.WaterRingWaveActivity"></activity>
+        <activity android:name=".activity.WaterRingWaveActivity" />
+        <activity android:name=".activity.MyClockOneActivity"></activity>
     </application>
 
 </manifest>

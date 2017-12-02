@@ -17,6 +17,9 @@ public class ExtendsViewGroupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extends_view_group);
+
+        setTitle("自定义ViewGroup-自定义ViewPager");
+
         lv_one = (ListView) this.findViewById(R.id.lv_one);
         lv_two = (ListView) this.findViewById(R.id.lv_two);
         lv_three = (ListView) this.findViewById(R.id.lv_three);
