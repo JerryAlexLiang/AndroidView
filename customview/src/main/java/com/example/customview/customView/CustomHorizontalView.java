@@ -45,6 +45,7 @@ public class CustomHorizontalView extends ViewGroup {
 
     public void init() {
         scroller = new Scroller(getContext());
+        //VelocityTracker，它用来测试滑动速度的
         tracker = VelocityTracker.obtain();
     }
 

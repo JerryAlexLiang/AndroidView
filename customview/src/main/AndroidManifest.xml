@@ -26,7 +26,8 @@
         <activity android:name=".activity.WaterRingWaveActivity" />
         <activity android:name=".activity.MyClockOneActivity" />
         <activity android:name=".activity.MyPlaneActivity" />
-        <activity android:name=".activity.BarrageActivity"></activity>
+        <activity android:name=".activity.BarrageActivity" />
+        <activity android:name=".activity.LikeStarActivity"></activity>
     </application>
 
 </manifest>
